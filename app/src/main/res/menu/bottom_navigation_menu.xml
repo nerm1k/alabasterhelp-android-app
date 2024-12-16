@@ -1,0 +1,22 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_svg"
+        android:iconTint="#00D1A7"
+        android:title="Главная"
+
+        />
+    <item
+        android:id="@+id/nav_statistics"
+        android:icon="@drawable/statistics_svg"
+        android:iconTint="#00D1A7"
+        android:title="Статистика"
+/>
+    <item
+        android:id="@+id/nav_achievements"
+        android:icon="@drawable/group__1_"
+        android:iconTint="#00D1A7"
+        android:title="Достижения"
+/>
+</menu>

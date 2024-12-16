@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#009577" android:state_checked="true"/> <!-- Цвет для выбранной иконки -->
+    <item android:color="#00D1A7"/> <!-- Цвет для невыбранной иконки -->
+</selector>
