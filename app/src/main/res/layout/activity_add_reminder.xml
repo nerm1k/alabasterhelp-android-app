@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26sp"
+            android:layout_marginBottom="22sp"
+            android:text="Добавить напоминание"
+            android:textColor="@color/achievement_text"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6sp"
+            android:text="Название"
+            android:textColor="@color/achievement_text"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:background="@drawable/rounded_edittext_background"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="10sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6sp"
+            android:text="Длительность"
+            android:textColor="@color/achievement_text"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22sp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinnerDuration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24sp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="10sp" />
+
+            <Spinner
+                android:id="@+id/spinnerFrequency"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="10sp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6sp"
+            android:text="Дополнительное подтверждение"
+            android:textColor="@color/achievement_text"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupConfirmationMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/radioPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableStart="@drawable/photo_add"
+                android:padding="8dp"
+                android:text="" />
+
+            <RadioButton
+                android:id="@+id/radioMath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableStart="@drawable/math_add"
+                android:padding="8dp"
+                android:text="" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6sp"
+            android:text="Дополнительное уведомление"
+            android:textColor="@color/achievement_text"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/buttonTime"
+            android:layout_width="200sp"
+            android:layout_height="48sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="ЧЧ:ММ"
+            android:textAlignment="viewStart" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200sp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/buttonAddReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radius_button"
+                android:paddingLeft="85sp"
+                android:paddingTop="10sp"
+                android:paddingRight="85sp"
+                android:paddingBottom="10sp"
+                android:text="Добавить"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

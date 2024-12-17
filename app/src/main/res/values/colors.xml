@@ -12,4 +12,5 @@
     <color name="achievement_text">#0A0909</color>
     <color name="achievement_not_completed">#888888</color>
     <color name="gold">#F8BB15</color>
+    <color name="textbox">#F1F1F1</color>
 </resources>
