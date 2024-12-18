@@ -54,25 +54,10 @@ class AchievementsFragment : Fragment() {
         val achievementsCount = achievementsAdapter.countAchieved()
         // val achievementsCount = sharedPreferences.getInt("achievements_count", 0)
         view.findViewById<TextView>(R.id.text_achievements).text = "$achievementsCount"
-    }
 
-    private fun loadAchievements(): List<Achievement> {
-        // Здесь вы можете загрузить достижения из SharedPreferences или создать их вручную
-        return listOf(
-            Achievement("Новый пользователь", "Вы успешно зашли в приложение",true),
-            Achievement("Новичок", "Вы заходили в приложение 2 дня",false),
-            Achievement("Первый раз", "Вы добавили свое первое напоминание", true),
-            Achievement("Перфекционист недели", "Необходимо отмечать выполнения напоминаний в течении недели",false),
-            Achievement("Опытный", "Вы заходили в приложение 30 дней",false),
-            Achievement("Фотоотчет", "Вы добавили свое первое напоминание",false),
-            Achievement("Перфекционист месяца", "Необходимо отмечать выполнения напоминаний в течении месяца",false),
-            Achievement("Старик", "Вы заходили в приложение 90 дней",false),
-            Achievement("Любитель статистики", "Вы успешно поделились своей статистикой",false)
-        )
-    }
 
-    override fun onResume() {
-        super.onResume()
+
+
         val editor = sharedPreferences.edit()
 
         // Получаем текущее время
@@ -97,6 +82,48 @@ class AchievementsFragment : Fragment() {
 
         editor.apply()
     }
+
+    private fun loadAchievements(): List<Achievement> {
+        // Здесь вы можете загрузить достижения из SharedPreferences или создать их вручную
+        return listOf(
+            Achievement("Новый пользователь", "Вы успешно зашли в приложение",true),
+            Achievement("Новичок", "Вы заходили в приложение 2 дня",false),
+            Achievement("Первый раз", "Вы добавили свое первое напоминание", true),
+            Achievement("Перфекционист недели", "Необходимо отмечать выполнения напоминаний в течении недели",false),
+            Achievement("Опытный", "Вы заходили в приложение 30 дней",false),
+            Achievement("Фотоотчет", "Вы добавили свое первое напоминание",false),
+            Achievement("Перфекционист месяца", "Необходимо отмечать выполнения напоминаний в течении месяца",false),
+            Achievement("Старик", "Вы заходили в приложение 90 дней",false),
+            Achievement("Любитель статистики", "Вы успешно поделились своей статистикой",false)
+        )
+    }
+
+//    override fun onResume() {
+//        super.onResume()
+//        val editor = sharedPreferences.edit()
+//
+//        // Получаем текущее время
+//        val currentDate = System.currentTimeMillis()
+//        // Получаем дату последнего обновления
+//        val lastUpdate = sharedPreferences.getLong("last_update", 0)
+//
+//        // Проверяем, был ли день изменён
+//        val lastUpdateDate = Date(lastUpdate)
+//        val calendar = Calendar.getInstance()
+//        calendar.time = lastUpdateDate
+//
+//        // Сравниваем только даты (без времени)
+//        if (calendar.get(Calendar.DAY_OF_YEAR) != Calendar.getInstance().get(Calendar.DAY_OF_YEAR) ||
+//            calendar.get(Calendar.YEAR) != Calendar.getInstance().get(Calendar.YEAR)) {
+//
+//            // Если день изменился, увеличиваем days_count
+//            val daysCount = sharedPreferences.getInt("days_count", 0) + 1
+//            editor.putInt("days_count", daysCount)
+//            editor.putLong("last_update", currentDate) // Сохраняем текущую дату
+//        }
+//
+//        editor.apply()
+//    }
 
 }
 

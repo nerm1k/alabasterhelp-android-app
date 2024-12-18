@@ -132,6 +132,7 @@
             android:id="@+id/buttonTime"
             android:layout_width="200sp"
             android:layout_height="48sp"
+            android:backgroundTint="#F1F1F1"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="ЧЧ:ММ"

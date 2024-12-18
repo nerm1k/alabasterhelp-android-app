@@ -13,4 +13,6 @@
     <color name="achievement_not_completed">#888888</color>
     <color name="gold">#F8BB15</color>
     <color name="textbox">#F1F1F1</color>
+    <color name="calendar_day">#222B45</color>
+    <color name="calendar_weekday">#8F9BB3</color>
 </resources>
