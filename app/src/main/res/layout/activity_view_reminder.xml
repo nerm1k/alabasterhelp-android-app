@@ -12,7 +12,6 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="24dp"
     android:layout_width="match_parent"
@@ -20,26 +19,61 @@
     android:layout_marginTop="30sp">
 
     <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Название напоминания"
-        android:textSize="20sp"
-        android:layout_marginBottom="16dp"/>
+        android:text="Выполненное напоминание"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30sp"/>
 
     <TextView
-        android:id="@+id/textViewCompletedAt"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Выполнено: "
+        android:text="Название"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="10sp"/>
 
-    <ImageView
-        android:id="@+id/imageViewPhoto"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/photo_add"
-        android:contentDescription="Фото напоминания"/>
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_edittext_background"
+        android:padding="10sp"
+        android:text="Название"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_green"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="15sp">
+        <TextView
+            android:id="@+id/textViewCompletedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Выполнено: "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageViewPhoto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:contentDescription="Фото напоминания"
+            android:src="@drawable/photo_add" />
+    </LinearLayout>
+
+
 </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

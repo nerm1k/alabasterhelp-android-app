@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#00D1A7" /> <!-- Серый цвет фона -->
+    <corners android:radius="10sp" /> <!-- Закругленные углы -->
+</shape>

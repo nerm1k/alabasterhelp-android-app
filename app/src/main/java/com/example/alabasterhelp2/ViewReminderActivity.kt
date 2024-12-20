@@ -3,6 +3,7 @@ package com.example.alabasterhelp2
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -73,9 +74,10 @@ class ViewReminderActivity : AppCompatActivity() {
 
     private fun setupView() {
         textViewTitle.text = currentReminder.title
-        textViewCompletedAt.text = "Выполнено: ${formatTimestamp(currentReminder.lastCompleted ?: 0)}"
+
 
         if (currentReminder.confirmationMethod == "Фото" && currentReminder.photoPath != null) {
+            textViewCompletedAt.text = "Вы добавили фото (${formatTimestamp(currentReminder.lastCompleted ?: 0)})"
             // Загрузка изображения из пути
             val bitmap = BitmapFactory.decodeFile(currentReminder.photoPath)
             if (bitmap != null) {
@@ -86,6 +88,7 @@ class ViewReminderActivity : AppCompatActivity() {
         } else {
             // Для математического примера скрываем ImageView
             imageViewPhoto.visibility = ImageView.GONE
+            textViewCompletedAt.text = "Вы решили математический пример (${formatTimestamp(currentReminder.lastCompleted ?: 0)})"
         }
     }
     private fun formatTimestamp(timestamp: Long): String {
@@ -93,5 +96,15 @@ class ViewReminderActivity : AppCompatActivity() {
         calendar.timeInMillis = timestamp
         val dateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
         return dateFormat.format(calendar.time)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish() // Закрываем текущую активность
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
