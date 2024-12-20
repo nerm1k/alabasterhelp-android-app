@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
-    <solid android:color="#00D1A7" />
+
+    <!-- Прозрачное внутреннее заполнение -->
+    <solid android:color="@android:color/transparent" />
+
+    <!-- Цветная обводка -->
+    <stroke
+        android:width="3dp"
+        android:color="#00D1A7" />
 </shape>

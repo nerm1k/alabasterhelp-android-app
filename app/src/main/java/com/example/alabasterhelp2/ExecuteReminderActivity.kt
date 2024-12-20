@@ -232,7 +232,7 @@ class ExecuteReminderActivity : AppCompatActivity() {
             if (takePictureIntent.resolveActivity(packageManager) != null) {
                 takePictureLauncher.launch(takePictureIntent)
             } else {
-                Toast.makeText(this, "Нет приложения для камеры", Toast.LENGTH_SHORT).show()
+                Snackbar.make(findViewById(android.R.id.content), "Нет приложения для камеры", Snackbar.LENGTH_SHORT).show()
             }
         } else {
             requestPermissions()

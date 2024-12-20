@@ -27,6 +27,7 @@
                 android:id="@+id/buttonLeft"
                 android:layout_width="30sp"
                 android:layout_height="30sp"
+                android:paddingLeft="9sp"
                 android:background="@drawable/rounded_blue_button"
                 android:drawableLeft="@drawable/left_calendar" />
 
@@ -57,6 +58,7 @@
                 android:id="@+id/buttonRight"
                 android:layout_width="30sp"
                 android:layout_height="30sp"
+                android:paddingRight="9sp"
                 android:background="@drawable/rounded_blue_button"
                 android:drawableRight="@drawable/right_calendar" />
         </LinearLayout>
@@ -64,7 +66,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15sp"
+            android:layout_marginBottom="10sp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -143,16 +145,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:padding="17sp"
                 android:text="1"
                 android:textAlignment="center"
                 android:textColor="@color/calendar_day"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                />
 
             <TextView
                 android:id="@+id/tuesdayDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:padding="17sp"
                 android:text="2"
                 android:textAlignment="center"
                 android:textColor="@color/calendar_day"
@@ -163,6 +168,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:padding="17sp"
                 android:text="3"
                 android:textAlignment="center"
                 android:textColor="@color/calendar_day"
@@ -171,6 +177,7 @@
             <TextView
                 android:id="@+id/thursdayDate"
                 android:layout_width="0dp"
+                android:padding="17sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="4"
@@ -184,6 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="5"
+                android:padding="17sp"
                 android:textAlignment="center"
                 android:textColor="@color/calendar_day"
                 android:textSize="13sp" />
@@ -194,6 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="6"
+                android:padding="17sp"
                 android:textAlignment="center"
                 android:textColor="@color/calendar_day"
                 android:textSize="13sp" />
@@ -204,6 +213,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="7"
+                android:padding="17sp"
                 android:textAlignment="center"
                 android:textColor="@color/calendar_day"
                 android:textSize="13sp" />
@@ -214,7 +224,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="20sp"
-            android:paddingTop="40sp"
+            android:paddingTop="30sp"
             android:paddingRight="20sp"
             android:text="Напоминания"
             android:textColor="@color/black"
@@ -225,7 +235,8 @@
             android:id="@+id/recyclerViewReminders"
             android:layout_width="match_parent"
             android:layout_height="348dp"
-            android:padding="16dp"
+            android:paddingTop="12dp"
+            android:paddingLeft="24sp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -235,18 +246,19 @@
     </LinearLayout>
 
 
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add_reminder"
+    <Button
+        android:id="@+id/btn_add_reminder"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginBottom="85dp"
         android:contentDescription="Добавить напоминание"
-        android:src="@drawable/add_button"
-        app:backgroundTint="#00D1A7"
+        android:background="@drawable/rounded_home_button"
+        android:drawableTop="@drawable/add_button"
+        android:gravity="center"
+        android:paddingTop="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

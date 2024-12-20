@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val fabAddReminder: FloatingActionButton = view.findViewById(R.id.fab_add_reminder)
+        val fabAddReminder: Button = view.findViewById(R.id.btn_add_reminder)
         fabAddReminder.setOnClickListener {
             // Открытие экрана для добавления напоминания
             val intent = Intent(activity, AddReminderActivity::class.java)
@@ -83,6 +83,7 @@ class HomeFragment : Fragment() {
         // Инициализация DatabaseHelper
         databaseHelper = DatabaseHelper(requireContext())
 
+        populateDays()
         // Загрузка напоминаний
         loadReminders()
     }

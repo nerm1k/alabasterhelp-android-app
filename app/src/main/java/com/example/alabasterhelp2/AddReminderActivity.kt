@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.snackbar.Snackbar
 import java.util.Calendar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -123,12 +124,12 @@ class AddReminderActivity : AppCompatActivity() {
 
         // Проверка, что время выбрано
         if (buttonTime.text.toString() == "Выбрать время") {
-            Toast.makeText(this, "Выберите время напоминания", Toast.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(android.R.id.content), "Выберите время напоминания", Snackbar.LENGTH_SHORT).show()
             return
         }
 
         if (title.isEmpty()) {
-            Toast.makeText(this, "Введите название напоминания", Toast.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(android.R.id.content), "Введите название напоминания", Snackbar.LENGTH_SHORT).show()
             return
         }
 
@@ -148,12 +149,12 @@ class AddReminderActivity : AppCompatActivity() {
             val id = databaseHelper.addReminder(reminder)
             if (id != -1L) {
                 launch(Dispatchers.Main) {
-                    Toast.makeText(this@AddReminderActivity, "Напоминание добавлено", Toast.LENGTH_SHORT).show()
+                    Snackbar.make(findViewById(android.R.id.content), "Напоминание добавлено", Snackbar.LENGTH_SHORT).show()
                     finish() // Закрыть активность после добавления
                 }
             } else {
                 launch(Dispatchers.Main) {
-                    Toast.makeText(this@AddReminderActivity, "Ошибка при добавлении напоминания", Toast.LENGTH_SHORT).show()
+                    Snackbar.make(findViewById(android.R.id.content), "Ошибка при добавлении напоминания", Snackbar.LENGTH_SHORT).show()
                 }
             }
         }

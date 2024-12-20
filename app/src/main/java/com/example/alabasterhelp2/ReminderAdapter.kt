@@ -2,6 +2,7 @@
 package com.example.alabasterhelp2
 
 import android.graphics.Paint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +40,23 @@ class ReminderAdapter(
             )
             holder.textViewTitle.paintFlags = holder.textViewTitle.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             holder.textViewTitle.paintFlags = holder.textViewTitle.paintFlags and Paint.UNDERLINE_TEXT_FLAG.inv()
+            // Установка иконки справа от текста
+            val drawableRight = ContextCompat.getDrawable(holder.itemView.context, R.drawable.additional_info) // Замените на ваш ресурс иконки
+
+            // Убедитесь, что drawable не равен null
+            if (drawableRight != null) {
+                drawableRight.setBounds(0, 0, drawableRight.intrinsicWidth, drawableRight.intrinsicHeight)
+
+                // Создание нового drawable с вертикальным смещением
+                val offsetDrawable = drawableRight.mutate()
+                offsetDrawable.setBounds(0, 2, drawableRight.intrinsicWidth, drawableRight.intrinsicHeight + 6)
+
+                holder.textViewTitle.setCompoundDrawables(null, null, offsetDrawable, null) // Установка иконки справа
+                holder.textViewTitle.compoundDrawablePadding = 12
+            } else {
+                // Логирование или обработка случая, когда drawable не найден
+                Log.e("TAG", "Drawable not found")
+            }
         } else {
             // Зеленый цвет и подчеркивание
             holder.textViewTitle.setTextColor(
